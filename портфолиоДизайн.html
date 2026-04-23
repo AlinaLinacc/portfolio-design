@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>LINACC | Портфолио — веб-сайты, презентации, дизайн</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Balsamiq Sans", sans-serif;
+            background-color: #eff5fb;
+            color: #1a1a1a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 20px 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #ee6504;
+        }
+        .logo span {
+            font-weight: 400;
+            color: #888;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #333;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ee6504;
+        }
+
+        /* Hero */
+        .hero {
+            margin: 48px 0 40px;
+            border-radius: 28px;
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+            min-height: 520px;
+            background-color: #f6f6f6;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .hero-bg {
+            flex: 1;
+            background-image: url('beg.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 460px;
+        }
+
+        .hero-content {
+            flex: 1;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 52px;
+        }
+
+        .hero-inner {
+            max-width: 480px;
+        }
+
+        .hero-badge {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ee6504;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #111;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 32px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .btn-primary {
+            background: #ee6504;
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #d84902;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #ccc;
+            color: #111;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: #ee6504;
+            color: #ee6504;
+            background: #fafafa;
+            transform: translateY(-2px);
+        }
+
+        /* Секция сайтов */
+        .section-websites {
+            background-color: #eff5fb;
+            padding: 80px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .section-presentations {
+            background-color: #eff5fb;
+            padding: 80px 0;
+            border-bottom: 1px solid #e8e8e8;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #111;
+            letter-spacing: -0.02em;
+        }
+
+        .section-sub {
+            color: #666;
+            margin-bottom: 56px;
+            font-size: 1rem;
+            max-width: 580px;
+            font-weight: 400;
+        }
+
+        /* ===== ГОРИЗОНТАЛЬНЫЕ КАРТОЧКИ ДЛЯ САЙТОВ ===== */
+        .horizontal-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .horizontal-card {
+            display: flex;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #efefef;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .horizontal-card:hover {
+            transform: translateX(6px);
+            border-color: #ee6504;
+            box-shadow: 0 12px 24px -12px rgba(238, 101, 4, 0.15);
+        }
+
+        .horizontal-card-img {
+            flex: 0 0 200px;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ee6504;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .horizontal-card-content {
+            flex: 1;
+            padding: 28px 32px;
+        }
+
+        .horizontal-card-cat {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            color: #ee6504;
+            margin-bottom: 8px;
+        }
+
+        .horizontal-card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #111;
+        }
+
+        .horizontal-card-desc {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .horizontal-card-link {
+            font-weight: 500;
+            color: #ee6504;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            transition: gap 0.2s;
+        }
+
+        .horizontal-card-link:hover {
+            gap: 10px;
+            color: #d84902;
+        }
+
+        /* ===== ПРЕЗЕНТАЦИИ — ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ ===== */
+        .scroll-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            cursor: grab;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .scroll-container:active {
+            cursor: grabbing;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #e0d5c4;
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #ee6504;
+            border-radius: 10px;
+        }
+
+        .scroll-wrapper {
+            display: inline-flex;
+            gap: 24px;
+            padding: 8px 4px 16px 4px;
+        }
+
+        /* Карточка-фото для презентаций */
+        .photo-card {
+            width: 550px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 28px -12px rgba(238, 101, 4, 0.25);
+        }
+
+        .photo-card-img {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 16px;
+        }
+
+        /* Контакты */
+        .contact {
+            text-align: center;
+            background: #fafafa;
+            border-radius: 28px;
+            margin: 48px 0 32px;
+            padding: 64px 32px;
+            border: 1px solid #efefef;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ee6504;
+        }
+
+        .contact p {
+            color: #555;
+            max-width: 480px;
+            margin: 0 auto 24px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            background: white;
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            color: #333;
+            transition: 0.2s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .social-links a:hover {
+            background: #ee6504;
+            color: white;
+            border-color: #ee6504;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #888;
+            font-size: 0.8rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* ===== АДАПТИВ: на мобильных 1 карточка (видна только одна) ===== */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                border-radius: 28px;
+                min-height: auto;
+            }
+            .hero-bg {
+                flex: none;
+                height: 280px;
+                border-radius: 28px 28px 0 0;
+                min-height: auto;
+            }
+            .hero-content {
+                border-radius: 0 0 28px 28px;
+                padding: 40px 28px;
+            }
+            .hero-inner {
+                text-align: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            h1 {
+                font-size: 2.4rem;
+            }
+            .horizontal-card {
+                flex-direction: column;
+            }
+            .horizontal-card-img {
+                flex: 0 0 auto;
+                height: 160px;
+                border-right: none;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            /* На планшетах карточка презентации чуть меньше */
+            .photo-card {
+                width: 500px;
+            }
+            .photo-card-img {
+                height: 340px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+            .section-websites, .section-presentations {
+                padding: 56px 0;
+            }
+            .nav-links {
+                gap: 24px;
+            }
+            .horizontal-card-content {
+                padding: 20px 24px;
+            }
+            .horizontal-card-title {
+                font-size: 1.2rem;
+            }
+            /* На мобильных: ширина карточки = ширина контейнера (видна ровно 1 карточка) */
+            .photo-card {
+                width: calc(100vw - 48px);
+                max-width: 400px;
+            }
+            .photo-card-img {
+                height: 280px;
+            }
+            .scroll-wrapper {
+                gap: 20px;
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-card {
+                width: calc(100vw - 48px);
+                max-width: 340px;
+            }
+            .photo-card-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="nav">
+            <div class="logo">LINACC <span>/ digital-дизайн</span></div>
+            <ul class="nav-links">
+                <li><a href="#work">сайты</a></li>
+                <li><a href="#presentations">презентации</a></li>
+                <li><a href="#contact">контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <!-- Hero: половина фон (beg.jpg), половина текст -->
+        <div class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-inner">
+                    <div class="hero-badge">ПОРТФОЛИО</div>
+                    <h1>Сайты, презентации,<br>дизайн-системы</h1>
+                    <p class="hero-description">Алина — веб-дизайнер. Разрабатываю цифровые продукты для бизнеса, от прототипа до готового решения. Лаконично, функционально, с вниманием к деталям.</p>
+                    <div class="btn-group">
+                        <a href="#work" class="btn btn-primary"><i class="fas fa-arrow-down"></i> проекты</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-comment"></i> связаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Секция: САЙТЫ - изменённый формат: одна карточка + открытие страницы проекта с фотографиями -->
+    <div class="section-websites" id="work">
+        <div class="container">
+            <div class="section-title">Веб-сайты</div>
+            <div class="section-sub">Адаптивные, быстрые, с продуманной структурой. От лендингов до корпоративных порталов.</div>
+            
+            <!-- Единая крупная карточка выбранного проекта -->
+            <div class="featured-work-card" id="featuredWorkCard" style="cursor: pointer;">
+                <div class="featured-work-inner">
+                    <div class="featured-work-icon">
+                        <i class="fas fa-graduation-cap" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <div class="featured-work-content">
+                        <div class="featured-work-cat">Образовательная платформа</div>
+                        <div class="featured-work-title">«Электронный журнал»</div>
+                        <div class="featured-work-desc">Брянский профессионально-педагогический колледж — современная платформа для ведения успеваемости, расписания и коммуникации.</div>
+                        <div class="featured-work-link">
+                            <span>нажмите, чтобы открыть страницу проекта →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Панель для переключения проектов -->
+            <div class="project-switch">
+                <span class="switch-label">Проекты:</span>
+                <div class="switch-buttons">
+                    <button class="switch-btn active" data-project="0">Электронный журнал</button>
+                    <button class="switch-btn" data-project="1">Скоро</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для полной страницы проекта -->
+    <div id="projectModal" class="project-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close">&times;</button>
+            <div class="modal-content" id="modalContent">
+                <!-- сюда будет подгружаться полная информация о проекте -->
+            </div>
+        </div>
+    </div>
+
+<style>
+    /* Стили для одной главной карточки */
+    .featured-work-card {
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid #eef2f6;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        margin-bottom: 32px;
+    }
+    
+    .featured-work-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 32px -12px rgba(238, 101, 4, 0.2);
+        border-color: #ee6504;
+    }
+    
+    .featured-work-inner {
+        display: flex;
+        padding: 32px 40px;
+        gap: 32px;
+        align-items: center;
+    }
+    
+    .featured-work-icon {
+        flex: 0 0 100px;
+        height: 100px;
+        background: #fef5ed;
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ee6504;
+    }
+    
+    .featured-work-content {
+        flex: 1;
+    }
+    
+    .featured-work-cat {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: #ee6504;
+        margin-bottom: 8px;
+    }
+    
+    .featured-work-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 12px;
+    }
+    
+    .featured-work-desc {
+        color: #555;
+        margin-bottom: 16px;
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+    
+    .featured-work-link {
+        font-size: 0.85rem;
+        color: #ee6504;
+        font-weight: 500;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+    
+    .featured-work-card:hover .featured-work-link {
+        opacity: 1;
+    }
+    
+    /* Панель переключения проектов */
+    .project-switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        padding: 16px 24px;
+        background: white;
+        border-radius: 60px;
+        border: 1px solid #eef2f6;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    
+    .switch-label {
+        font-size: 0.85rem;
+        color: #888;
+    }
+    
+    .switch-buttons {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .switch-btn {
+        padding: 8px 20px;
+        border-radius: 40px;
+        background: transparent;
+        border: 1px solid #e0e0e0;
+        font-family: "Balsamiq Sans", sans-serif;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        color: #555;
+    }
+    
+    .switch-btn:hover {
+        border-color: #ee6504;
+        color: #ee6504;
+    }
+    
+    .switch-btn.active {
+        background: #ee6504;
+        border-color: #ee6504;
+        color: white;
+    }
+    
+    /* Модальное окно */
+    .project-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .project-modal.active {
+        display: flex;
+    }
+    
+    .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(8px);
+    }
+    
+    .modal-container {
+        position: relative;
+        width: 90%;
+        max-width: 1000px;
+        max-height: 85vh;
+        background: white;
+        border-radius: 32px;
+        overflow: auto;
+        z-index: 1001;
+        animation: modalFadeIn 0.3s ease;
+    }
+    
+    @keyframes modalFadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .modal-close {
+        position: sticky;
+        top: 16px;
+        right: 16px;
+        float: right;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        border: 1px solid #e0e0e0;
+        font-size: 24px;
+        cursor: pointer;
+        margin: 16px;
+        z-index: 10;
+        transition: all 0.2s;
+    }
+    
+    .modal-close:hover {
+        background: #ee6504;
+        color: white;
+        border-color: #ee6504;
+    }
+    
+    .modal-content {
+        padding: 32px 40px 48px;
+        clear: both;
+    }
+    
+    /* Стили для полной страницы проекта */
+    .project-full-header {
+        margin-bottom: 32px;
+    }
+    
+    .project-full-cat {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: #ee6504;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+    
+    .project-full-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 20px;
+    }
+    
+    .project-full-subtitle {
+        font-size: 1rem;
+        color: #ee6504;
+        margin-bottom: 24px;
+        font-weight: 500;
+    }
+    
+    .project-full-hero {
+        font-size: 1.1rem;
+        color: #333;
+        background: #f8f9fa;
+        padding: 20px 24px;
+        border-radius: 20px;
+        margin-bottom: 24px;
+        line-height: 1.5;
+    }
+    
+    .project-full-section {
+        margin-bottom: 24px;
+    }
+    
+    .project-full-section h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ee6504;
+        margin-bottom: 8px;
+    }
+    
+    .project-full-section p {
+        color: #555;
+        line-height: 1.5;
+    }
+    
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0 0 0;
+    }
+    
+    .feature-list li {
+        padding: 6px 0 6px 24px;
+        position: relative;
+        color: #555;
+    }
+    
+    .feature-list li:before {
+        content: "✓";
+        color: #ee6504;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+    
+    .project-tech {
+        background: #f0f0f0;
+        padding: 12px 20px;
+        border-radius: 40px;
+        display: inline-block;
+        font-size: 0.85rem;
+        font-family: monospace;
+        margin-top: 16px;
+    }
+    
+    /* Галерея фотографий */
+    .project-gallery {
+        margin: 32px 0 24px;
+    }
+    
+    .project-gallery h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ee6504;
+        margin-bottom: 16px;
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    
+    .gallery-item {
+        border-radius: 16px;
+        overflow: hidden;
+        background: #f5f5f5;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .gallery-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    .gallery-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .gallery-caption {
+        padding: 12px;
+        font-size: 0.8rem;
+        color: #666;
+        background: white;
+        text-align: center;
+    }
+    
+    /* Лайтбокс для увеличения фото */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 1100;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .lightbox.active {
+        display: flex;
+    }
+    
+    .lightbox-img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+    
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+    
+    @media (max-width: 768px) {
+        .featured-work-inner {
+            flex-direction: column;
+            text-align: center;
+            padding: 28px 24px;
+        }
+        .featured-work-title {
+            font-size: 1.4rem;
+        }
+        .modal-content {
+            padding: 24px 20px 36px;
+        }
+        .project-full-title {
+            font-size: 1.8rem;
+        }
+        .project-switch {
+            width: 100%;
+            justify-content: center;
+        }
+        .gallery-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        .gallery-img {
+            height: 180px;
+        }
+    }
+</style>
+
+<script>
+    (function() {
+        // ДАННЫЕ ПРОЕКТОВ (добавляйте новые проекты сюда)
+        const projects = [
+            {
+                id: 0,
+                cat: "Образовательная платформа",
+                title: "Электронный журнал",
+                institution: "Электронный журнал для Брянского профессионально-педагогического колледжа",
+                icon: "fa-graduation-cap",
+                shortDesc: "Полноценная платформа для Брянского профессионально-педагогического колледжа с ролевой системой доступа и единой базой данных.",
+                fullData: {
+                    hero: "Электронный журнал для образовательной организации — комплексное решение для автоматизации учебного процесса. Платформа объединяет администрацию, преподавателей, студентов и родителей в едином информационном пространстве.",
+                    challenge: "Разработать систему, которая заменит бумажные журналы и обеспечит прозрачность учебного процесса. Ключевые требования: разные уровни доступа, централизованное хранение данных, удобный интерфейс для всех категорий пользователей.",
+                    solution: "Создана веб-платформа с ролевой моделью доступа и единой базой данных. Реализовано три основных интерфейса:\n\n• Панель администратора — полное управление системой, пользователями, группами, студентами и отчётностью.\n• Страницы преподавателей — электронный журнал, выставление оценок, запись тем занятий, личные кабинеты.\n• Страницы родителей  — просмотр успеваемости студентов.\n\nВсе данные централизованно хранятся в базе данных, обеспечивая актуальность информации для всех ролей.",
+                    result: "Система успешно внедрена в Брянском профессионально-педагогическом колледже. Учебный процесс полностью переведён в цифровой формат. Преподаватели экономят до 50% времени на заполнение отчётности. Родители получили возможность отслеживать успеваемость детей в реальном времени.",
+                    tech: "PHP, MySQL, HTML, CSS, JavaScript, адаптивная вёрстка"
+                },
+                // ФОТОГРАФИИ ДЛЯ ПРОЕКТА (замените пути на свои)
+                gallery: [
+                    { src: "img/bppk/admin-panel.png", caption: "Панель администратора — управление системой" },
+                    { src: "img/bppk/teacher-page.png", caption: "Личный кабинет преподавателя" },
+                    { src: "img/bppk/parent-page.png", caption: "Страница родителя — успеваемость" },
+                    { src: "img/bppk/database.png", caption: "Структура базы данных" },
+                    { src: "img/bppk/journal.png", caption: "Электронный журнал оценок" },
+                    
+                ]
+            },
+            {
+                id: 1,
+                cat: "Скоро",
+                title: "Новый проект",
+                institution: "",
+                icon: "fa-clock",
+                shortDesc: "Следующий проект уже в разработке. Скоро здесь появится информация.",
+                fullData: {
+                    hero: "Проект находится в стадии разработки. Скоро мы расскажем подробности.",
+                    challenge: "—",
+                    solution: "—",
+                    result: "—",
+                    tech: "—"
+                },
+                gallery: [
+                    { src: "", caption: "Скоро здесь появятся фотографии" }
+                ]
+            }
+        ];
+        
+        let currentProjectIndex = 0;
+        
+        // Элементы интерфейса
+        const featuredCard = document.getElementById('featuredWorkCard');
+        const switchBtns = document.querySelectorAll('.switch-btn');
+        const modal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeModalBtn = document.querySelector('.modal-close');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        
+        // Функция для форматирования текста с переносами строк
+        function formatText(text) {
+            if (!text) return '';
+            return text.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
+        }
+        
+        // Функция обновления главной карточки
+        function updateFeaturedCard(index) {
+            const project = projects[index];
+            if (!project) return;
+            
+            let displayDesc = project.shortDesc;
+            if (project.institution && project.institution !== "") {
+                displayDesc = `${project.institution} — ${project.shortDesc}`;
+            }
+            
+            featuredCard.innerHTML = `
+                <div class="featured-work-inner">
+                    <div class="featured-work-icon">
+                        <i class="fas ${project.icon}" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <div class="featured-work-content">
+                        <div class="featured-work-cat">${project.cat}</div>
+                        <div class="featured-work-title">«${project.title}»</div>
+                        <div class="featured-work-desc">${displayDesc}</div>
+                        <div class="featured-work-link">
+                            <span>нажмите, чтобы открыть страницу проекта →</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Обновляем активную кнопку
+            switchBtns.forEach((btn, btnIdx) => {
+                if (parseInt(btn.dataset.project) === index) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            currentProjectIndex = index;
+        }
+        
+        // Функция генерации галереи
+        function generateGallery(gallery) {
+            if (!gallery || gallery.length === 0 || (gallery.length === 1 && !gallery[0].src)) {
+                return '<p style="color: #999;">Фотографии будут добавлены позже</p>';
+            }
+            
+            let html = '<div class="project-gallery"><h4><i class="fas fa-images"></i> Галерея проекта</h4><div class="gallery-grid">';
+            
+            gallery.forEach((img, idx) => {
+                if (img.src) {
+                    html += `
+                        <div class="gallery-item" data-img-src="${img.src}">
+                            <img class="gallery-img" src="${img.src}" alt="${img.caption}" onerror="this.src='https://placehold.co/600x400/f0f0f0/cccccc?text=Фото+будет+добавлено'">
+                            <div class="gallery-caption">${img.caption}</div>
+                        </div>
+                    `;
+                }
+            });
+            
+            html += '</div></div>';
+            return html;
+        }
+        
+        // Функция открытия полной страницы проекта
+        function openProjectPage(index) {
+            const project = projects[index];
+            if (!project) return;
+            
+            const data = project.fullData;
+            const galleryHtml = generateGallery(project.gallery);
+            
+            // Форматируем решение с маркированным списком
+            let solutionHtml = data.solution;
+            if (data.solution && data.solution.includes('•')) {
+                const parts = data.solution.split('\n\n');
+                let formattedParts = [];
+                for (let part of parts) {
+                    if (part.includes('•')) {
+                        const lines = part.split('\n');
+                        let listItems = '';
+                        for (let line of lines) {
+                            if (line.trim().startsWith('•')) {
+                                listItems += `<li>${line.trim().substring(1).trim()}</li>`;
+                            } else if (line.trim() !== '') {
+                                formattedParts.push(`<p>${line}</p>`);
+                            }
+                        }
+                        if (listItems) {
+                            formattedParts.push(`<ul class="feature-list">${listItems}</ul>`);
+                        }
+                    } else if (part.trim() !== '') {
+                        formattedParts.push(`<p>${part}</p>`);
+                    }
+                }
+                solutionHtml = formattedParts.join('');
+            } else {
+                solutionHtml = `<p>${data.solution}</p>`;
+            }
+            
+            let institutionHtml = '';
+            if (project.institution && project.institution !== "") {
+                institutionHtml = `<div class="project-full-subtitle"><i class="fas fa-university"></i> ${project.institution}</div>`;
+            }
+            
+            modalContent.innerHTML = `
+                <div class="project-full-header">
+                    <div class="project-full-cat">${project.cat}</div>
+                    <div class="project-full-title">«${project.title}»</div>
+                    ${institutionHtml}
+                </div>
+                <div class="project-full-hero">
+                    ${data.hero}
+                </div>
+                <div class="project-full-section">
+                    <h4><i class="fas fa-tasks"></i> Задача</h4>
+                    <p>${data.challenge}</p>
+                </div>
+                <div class="project-full-section">
+                    <h4><i class="fas fa-lightbulb"></i> Решение</h4>
+                    ${solutionHtml}
+                </div>
+                <div class="project-full-section">
+                    <h4><i class="fas fa-chart-line"></i> Результат</h4>
+                    <p>${data.result}</p>
+                </div>
+                ${galleryHtml}
+                <div class="project-tech">
+                    <i class="fas fa-code"></i> ${data.tech}
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Добавляем обработчики для галереи (клик по фото открывает лайтбокс)
+            setTimeout(() => {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const imgSrc = item.getAttribute('data-img-src');
+                        if (imgSrc) {
+                            openLightbox(imgSrc);
+                        }
+                    });
+                });
+            }, 100);
+        }
+        
+        // Лайтбокс для увеличения фото
+        function openLightbox(imgSrc) {
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.innerHTML = `
+                <button class="lightbox-close">&times;</button>
+                <img class="lightbox-img" src="${imgSrc}" alt="Увеличенное фото">
+            `;
+            document.body.appendChild(lightbox);
+            document.body.style.overflow = 'hidden';
+            
+            lightbox.classList.add('active');
+            
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.remove();
+                }, 300);
+                document.body.style.overflow = '';
+            };
+            
+            lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            
+            document.addEventListener('keydown', function onEsc(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                    document.removeEventListener('keydown', onEsc);
+                }
+            });
+        }
+        
+        // Закрытие модального окна
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Обработчики событий
+        featuredCard.addEventListener('click', () => {
+            openProjectPage(currentProjectIndex);
+        });
+        
+        switchBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const projectId = parseInt(btn.dataset.project);
+                if (!isNaN(projectId)) {
+                    updateFeaturedCard(projectId);
+                }
+            });
+        });
+        
+        closeModalBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+        
+        // Закрытие по Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+        
+        // Инициализация — показываем первый проект
+        updateFeaturedCard(0);
+    })();
+</script>
+
+    <!-- Секция: ПРЕЗЕНТАЦИИ (горизонтальный скролл, на мобильных 1 карточка) -->
+    <div class="section-presentations" id="presentations">
+        <div class="container">
+            <div class="section-title">Презентации</div>
+            <div class="section-sub">Структурированные, визуально сильные презентации для питчей, отчётов и запусков.</div>
+            
+            <div class="scroll-container" id="scrollContainer">
+                <div class="scroll-wrapper">
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/1.png');"></div>
+                    </div>
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/7.png');"></div>
+                    </div>
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/4.png');"></div>
+                    </div>
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/5.png');"></div>
+                    </div>
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/2.png');"></div>
+                    </div>
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/3.png');"></div>
+                    </div>
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/6.png');"></div>
+                    </div>
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/8.png');"></div>
+                    </div>
+                    <div class="photo-card">
+                        <div class="photo-card-img" style="background-image: url('призент/9.png');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контакты -->
+<div class="container">
+    <div id="contact" class="contact">
+        <h2>Начнём проект?</h2>
+        <p>Разработка сайта, презентация для инвесторов или полный ребрендинг — напишите, и я расскажу, как решим вашу задачу.</p>
+        <div class="btn-group" style="justify-content: center; flex-wrap: wrap;">
+            <a href="mailto:serikovalina23a@yandex.ru" class="btn btn-primary"><i class="fas fa-envelope"></i> serikovalina23a@yandex.ru</a>
+            <a href="https://t.me/linaccc" class="btn btn-outline"><i class="fab fa-telegram"></i> Telegram</a>
+            <a href="http://vk.ru/linaccc" class="btn btn-outline"><i class="fab fa-vk"></i> VK</a>
+            <a href="#" class="btn btn-outline"><i class="fas fa-bolt"></i> MAX</a>
+        </div>
+    </div>
+</div>
+
+        <footer>
+            <p>© 2026 LINACC — портфолио веб-сайтов, презентаций и дизайнов</p>
+            <p style="margin-top: 12px; font-size: 0.7rem;">Все проекты выполнены в сотрудничестве с клиентами</p>
+        </footer>
+    </div>
+</main>
+
+<script>
+    // Плавный скролл по якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#" || targetId === "") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setTimeout(() => {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }, 80);
+            }
+        });
+    });
+
+    // Тень хедера при скролле
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 10) {
+            header.style.boxShadow = '0 1px 8px rgba(0,0,0,0.05)';
+        } else {
+            header.style.boxShadow = 'none';
+        }
+    });
+
+    // Анимация появления горизонтальных карточек сайтов
+    const elements = document.querySelectorAll('.horizontal-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateX(0px)';
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(-20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+    });
+
+    // Drag to scroll для горизонтального скролла презентаций
+    const scrollContainer = document.getElementById('scrollContainer');
+    if (scrollContainer) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.style.cursor = 'grabbing';
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeft = scrollContainer.scrollLeft;
+        });
+
+        scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.style.cursor = 'grab';
+        });
+
+        scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.style.cursor = 'grab';
+        });
+
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            scrollContainer.scrollLeft = scrollLeft - walk;
+        });
+    }
+</script>
+</body>
+</html>
